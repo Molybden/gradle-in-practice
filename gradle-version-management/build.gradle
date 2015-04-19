@@ -1,0 +1,17 @@
+repositories{
+	mavenCentral()
+}
+
+configurations{
+	example
+}
+
+dependencies{
+	example 'org.slf4j:slf4j-log4j12:1.7.+'
+	example 'ch.qos.logback:logback-classic:1.1.+'
+}
+
+task print()<<{
+	println configurations.example.asPath
+}
+

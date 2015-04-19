@@ -1,0 +1,1 @@
+def folder = new File('cleanup')

@@ -1,0 +1,29 @@
+task printBefore(){
+	ext.input=file("input.txt")
+	doLast{
+		println input.text
+	}
+}
+
+task autoCorrect(dependsOn:printBefore) {
+	ext.output = file("output.txt")
+	inputs.file printBefore.input 
+	outputs.file output 
+	doLast{
+		output.text=""
+		printBefore.input.eachLine{line->
+			println "Checking: $line"
+			line = line.replace("grejt", "great")
+			line = line.replace("fajn", "fine")
+			println "Writing: $line"
+			output.text += "$line\n"
+		}
+	}
+}
+
+task printAfter(){
+	inputs.files autoCorrect
+	doLast{
+		println autoCorrect.output.text
+	}
+}

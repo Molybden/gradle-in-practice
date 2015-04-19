@@ -1,0 +1,22 @@
+repositories{
+	mavenCentral()
+}
+apply plugin: 'base'
+version='1.0'
+
+task generate(){
+	ext.someFile = file('build/somefile.txt')
+	doFirst{
+		someFile.text="hello"
+	}
+}
+
+artifacts {
+	archives file: generate.someFile, type: 'text', builtBy: generate
+}
+
+uploadArchives {
+	repositories {
+		mavenLocal()
+	}
+}

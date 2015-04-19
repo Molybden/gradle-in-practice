@@ -1,2 +1,5 @@
+.classpath
+.gradle/
 .project
+.settings/
 .classes

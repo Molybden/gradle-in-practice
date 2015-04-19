@@ -1,0 +1,8 @@
+task task1() << {
+	println "Hello from task1"
+}
+
+task task2() << {
+	println "Hello from task2"
+}
+
