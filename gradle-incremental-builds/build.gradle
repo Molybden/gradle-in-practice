@@ -1,3 +1,5 @@
+defaultTasks 'printAfter'
+
 task printBefore(){
 	ext.input=file("input.txt")
 	doLast{

@@ -1,0 +1,20 @@
+
+task first() << {
+	println "Hello from first"
+}
+
+task second() {
+	println "Hello from second"
+}
+
+buildscript{
+	println "Hello from buildscript"
+}
+
+task third {
+	println "Hello 1 from third"
+	doLast{
+		println "Hello 2 from third"
+	}
+}
+

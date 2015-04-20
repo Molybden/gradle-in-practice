@@ -1,4 +1,4 @@
-
+defaultTasks 'add-message from me.'
 
 def variable
 task initIt(){
@@ -11,6 +11,8 @@ def pattern='add-'
 tasks.addRule("Pattern: $pattern<message>") { String taskName ->
     if (taskName.startsWith(pattern)) {
         task(taskName) {
+			dependsOn initIt
+			finalizedBy printIt
 			doLast{
 				variable += " ${taskName-pattern}"
 			}
@@ -18,7 +20,7 @@ tasks.addRule("Pattern: $pattern<message>") { String taskName ->
     }
 }
 
-task printIt(){
+task printIt(){	
 	doLast{
 		println variable
 	}

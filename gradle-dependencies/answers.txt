@@ -1,8 +1,22 @@
-
+2:
 configurations.example.resolutionStrategy{ cacheDynamicVersionsFor 0, 'hours' }
+eller
+configurations{
+	example{
+		resolutionStrategy{ cacheDynamicVersionsFor 0, 'hours' }
+	}
+}
 
+3:
 configurations.example.resolutionStrategy{ force 'org.slf4j:slf4j-api:1.7.7' }
 
+4:
 configurations {
 	all*.exclude module: 'slf4j-api'
+}
+eller
+configurations{
+	example{
+		exclude module: 'slf4j-api'
+	}
 }
