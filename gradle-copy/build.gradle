@@ -1,0 +1,3 @@
+def translation = [huvudperson:'Stina',genus:'flicka',pronomen:'hon']
+
+def tree = 

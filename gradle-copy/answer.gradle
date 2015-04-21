@@ -1,0 +1,10 @@
+def translation = [huvudperson:'Stina',genus:'flicka',pronomen:'hon']
+def tree = fileTree('src')
+tree.exclude('*.xml')
+
+task copy(type: Copy){
+	from tree
+	into 'build/'
+	expand(translation)		
+	exclude { it.file.name ==~ /.*\d.*/ }
+}
