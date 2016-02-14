@@ -1,22 +1,36 @@
 2:
 configurations.example.resolutionStrategy{ cacheDynamicVersionsFor 0, 'hours' }
-eller
+
+or
+
 configurations{
 	example{
 		resolutionStrategy{ cacheDynamicVersionsFor 0, 'hours' }
 	}
 }
 
+
 3:
 configurations.example.resolutionStrategy{ force 'org.slf4j:slf4j-api:1.7.7' }
+
 
 4:
 configurations {
 	all*.exclude module: 'slf4j-api'
 }
-eller
+
+or
+
 configurations{
 	example{
 		exclude module: 'slf4j-api'
 	}
 }
+
+
+5:
+	example 'net.sf.json-lib:json-lib:2.4:jdk15'
+
+or
+
+	example group: 'net.sf.json-lib', name: 'json-lib', version: '2.4', classifier: 'jdk15'

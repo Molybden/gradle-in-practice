@@ -12,6 +12,8 @@ dependencies{
 }
 
 task print()<<{
-	println configurations.example.asPath
+	configurations.example.asPath.split(':').each {
+		println it
+	}
 }
 
