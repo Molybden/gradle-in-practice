@@ -1,0 +1,17 @@
+
+subprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+}
+
+project(':gui'){
+    task('printGui'){
+        description 'Prints Hello gui'
+        group 'Printing'
+        doLast {
+            println "Hello gui"
+        }
+    }
+}

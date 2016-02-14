@@ -1,0 +1,4 @@
+['gui','api','server'].each{ sub ->
+    include sub
+    findProject(":$sub").buildFileName = "${sub}.gradle"
+}

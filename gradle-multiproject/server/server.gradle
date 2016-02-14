@@ -1,0 +1,8 @@
+task printServer(){
+    group 'Printing'
+    description 'Prints Hello server'
+    doLast{
+        println "Hello server"
+    }
+}
+
