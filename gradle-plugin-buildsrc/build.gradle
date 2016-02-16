@@ -1,0 +1,7 @@
+
+task getQuoteOfDay(){
+    doFirst{
+        def url = new URL('http://quotes.rest/qod.json')
+        println new groovy.json.JsonSlurper().parseText(url.text)?.contents?.quotes?.quote?.get(0)
+    }
+}
