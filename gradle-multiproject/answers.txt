@@ -1,0 +1,29 @@
+1. In api/api.gradle:
+task('printApi'){
+    description 'Prints Hello api'
+    group 'Printing'
+    doLast {
+        println "Hello api"
+    }
+}
+OR in build.gradle:
+project(':api'){
+    task('printApi'){
+        description 'Prints Hello api'
+        group 'Printing'
+        doLast {
+            println "Hello api"
+        }
+    }
+}
+
+
+2.
+dependencies{
+    compile project(':api')
+}
+
+
+3. In settings.gradle:
+include 'tools'
+
