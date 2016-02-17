@@ -1,0 +1,31 @@
+1.
+Add to ExampleExtension:
+
+    project.task('exampleTask'){
+        doLast{
+            println 'Hello Example'
+        }
+    }
+
+Add to ExamplePluginIntegrationTest:
+
+    @Test
+    void "Test running the task, verify output"() {
+        buildFile << """
+apply plugin: '$pluginName'
+"""
+        def output = runTasks(taskName)
+        Assert.assertTrue('Missing task output "Hello Example" in: '+output, output.contains('Hello Example'))
+    }
+
+
+2. Add to ExampleExtension:
+
+    project.extensions.create('example', ExampleExtension)
+    project.task('createDirTask'){
+        doLast{
+            //Note that we get the extension value INSIDE the task to get the actual value and not te default one
+            String dirName = project.extensions.getByName('example').dirName
+            new File(project.buildDir, dirName).mkdirs()
+        }
+    }
