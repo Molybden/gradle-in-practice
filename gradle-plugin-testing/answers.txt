@@ -1,5 +1,4 @@
-1.
-Add to ExampleExtension:
+1. Add to ExampleExtension:
 
     project.task('exampleTask'){
         doLast{
@@ -7,7 +6,7 @@ Add to ExampleExtension:
         }
     }
 
-Add to ExamplePluginIntegrationTest:
+2. Add to ExamplePluginIntegrationTest:
 
     @Test
     void "Test running the task, verify output"() {
@@ -19,7 +18,7 @@ apply plugin: '$pluginName'
     }
 
 
-2. Add to ExampleExtension:
+3. Add to ExampleExtension:
 
     project.extensions.create('example', ExampleExtension)
     project.task('createDirTask'){
