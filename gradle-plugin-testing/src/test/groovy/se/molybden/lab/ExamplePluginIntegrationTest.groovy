@@ -1,13 +1,12 @@
+package se.molybden.lab
+
 import org.gradle.tooling.BuildLauncher
-import org.gradle.tooling.ProjectConnection
-import org.junit.Assert
-import org.junit.Test
-
 import org.gradle.tooling.GradleConnector
+import org.gradle.tooling.ProjectConnection
 import org.junit.After
+import org.junit.Assert
 import org.junit.Before
-import se.molybden.lab.AbstractPluginExampleTestBase
-
+import org.junit.Test
 
 class ExamplePluginIntegrationTest extends AbstractPluginExampleTestBase{
     File projectDir = new File("build/tmp/tests/")
