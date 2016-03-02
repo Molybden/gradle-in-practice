@@ -1,0 +1,7 @@
+
+  public class Class551{
+      public void callMe(){
+          System.out.println("called");
+      }
+  }
+  

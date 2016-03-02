@@ -1,0 +1,7 @@
+
+  public class Class5064{
+      public void callMe(){
+          System.out.println("called");
+      }
+  }
+  
