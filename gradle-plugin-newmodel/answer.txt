@@ -1,0 +1,23 @@
+1.
+
+    @Defaults
+    void setDetfaults(MemCheckSettings settings){
+        settings.limit = '256m'
+    }
+
+
+2.
+
+apply plugin: 'java'
+test{
+    jvmArgs '-Xmx2g'
+}
+
+
+2.
+
+model{
+    memcheck{
+        limit = '3g'
+    }
+}

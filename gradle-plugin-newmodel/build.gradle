@@ -1,0 +1,38 @@
+@Managed
+interface MemCheckSettings {
+    void setLimit(String s); String getLimit()
+}
+
+/**
+ * This plugin will iterate automatically over all tasks of type Test and check that memory settings are within the limit
+ */
+class MemoryCheck extends org.gradle.model.RuleSource {
+    @Model
+    void memcheck(MemCheckSettings settings) {settings.limit='256m'}
+
+    @Validate void doCheck(ModelMap<Task> tasks, MemCheckSettings settings) {
+        long limit = toLong(settings.getLimit())
+        tasks.withType(org.gradle.api.tasks.testing.Test).each { task ->
+            task.allJvmArgs.each {string ->
+                if (string.contains('Xmx')) {
+                    String size = string.substring(string.indexOf('Xmx') + 3)
+                    if (limit < toLong(size)){
+                        println("WARNING: $size is too high for the task ${task.name} of type ${task.class.name}. Max -Xmx limit for any job is $settings.limit")
+                    }
+                }
+            }
+        }
+    }
+
+    private long toLong(String size){
+        size = size.toLowerCase()
+        size = size.replace('g', '000000000')
+        size = size.replace('m', '000000')
+        size = size.replace('k', '000')
+        Long.parseLong(size)
+    }
+}
+
+apply plugin: MemoryCheck
+
+
