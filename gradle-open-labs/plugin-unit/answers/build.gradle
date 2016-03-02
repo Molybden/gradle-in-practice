@@ -1,0 +1,13 @@
+version '1.0'
+apply plugin: 'groovy'
+
+dependencies{
+    compile localGroovy()
+    compile gradleApi()
+}
+
+uploadArchives {
+    repositories {
+        mavenLocal()
+    }
+}

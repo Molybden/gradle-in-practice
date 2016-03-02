@@ -1,0 +1,7 @@
+//Add following to example/build.gradle
+
+dependencies{
+    classpath group:'', name: 'plugin-unit', version: '1.0'
+}
+}
+apply plugin: 'plugin-unit'
