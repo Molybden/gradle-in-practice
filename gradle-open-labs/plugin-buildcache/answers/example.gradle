@@ -1,0 +1,10 @@
+//Add following to example/build.gradle
+
+dependencies{
+    classpath group:'', name: 'plugin-buildcache', version: '1.0'
+}
+apply plugin: 'plugin-cache'
+
+cache{
+    saveTo = file('.')
+}
