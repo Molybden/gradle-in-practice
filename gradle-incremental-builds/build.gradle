@@ -9,9 +9,10 @@ task printBefore(){
 
 task autoCorrect(dependsOn:printBefore) {
 	ext.output = file("output.txt")
-	inputs.file printBefore.input 
-	outputs.file output 
-	doLast{
+    //TODO: Add inputs and outputs here
+
+
+    doLast{
 		output.text=""
 		printBefore.input.eachLine{line->
 			println "Checking: $line"
