@@ -1,4 +1,4 @@
-def translation = [huvudperson:'Stina',genus:'flicka',pronomen:'hon']
+def translation = [character: 'Stina', pronoun: 'she', gender: 'girl']
 def tree = fileTree('src')
 tree.exclude('*.xml')
 

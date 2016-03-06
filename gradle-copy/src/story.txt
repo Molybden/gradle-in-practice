@@ -1,6 +1,6 @@
-Det var en gång en ${genus} som hette $huvudperson.
-$huvudperson bodde i en liten stuga invid en sjö.
+Once upon a time, there was a $gender named $character.
+$character lived in a small cottage by a lake.
 
-En dag hörde $pronomen att någon ropade i panik:
--${huvudperson}! 
-${pronomen} släppte genast allt och...
+One day $pronoun heard someone screaming in panic:
+-$character!
+$pronoun dropped everything and...
