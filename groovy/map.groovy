@@ -1,7 +1,7 @@
 def days = 
-assert days['monday']=='måndag'
+assert days['monday']=='enter translation here'
 def weekend = 
 assert weekend.size() == 2
-assert weekend.sunday=='söndag'
+assert weekend.sunday=='enter translation here'
 def weekDays = 
 assert weekDays.size() == 5
